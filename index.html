@@ -3470,7 +3470,7 @@ function twilioSetupDevice(token) {
   });
   twilioDevice.on('disconnect', () => twilioOnCallEnd());
   twilioDevice.on('cancel', () => twilioOnCallEnd());
-  twilioDevice.on('offline', () => { twilioReady = false; twilioShowStatus('🔄 Reconnecting…', '#D69E2E'); setTimeout(() => twilioInit(), 3000); });, () => { twilioReady = false; twilioShowStatus('📵 Offline', '#718096'); });
+  twilioDevice.on('offline', () => { twilioReady = false; twilioShowStatus('🔄 Reconnecting…', '#D69E2E'); setTimeout(() => twilioInit(), 3000); });
 }
 
 // Generate Twilio access token client-side using HMAC-SHA256
@@ -3631,7 +3631,7 @@ twilioLoadSDK(() => {
     })
     .catch(e => {
       console.warn('Auto-connect failed:', e);
-      twilioShowStatus('⚠️ Connection timeout — retrying…', '#C45911'); setTimeout(() => twilioInit(), 5000);, '#D69E2E');
+      twilioShowStatus('⚠️ Connection timeout — retrying…', '#C45911'); setTimeout(() => twilioInit(), 5000);
     });
 });
 
