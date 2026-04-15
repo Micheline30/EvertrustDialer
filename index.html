@@ -4320,7 +4320,7 @@ async function twilioInit() {
 
   // Get config from settings UI or use Render backend defaults
   const saved = (typeof dialerConfigs !== 'undefined' && dialerConfigs.twilio) ? dialerConfigs.twilio : {};
-  const tokenURL  = saved.tw_token_server || 'https://evertrust-backend-1or5.onrender.com/token';
+  
   const callerId  = saved.tw_caller_id    || '+18437735293';
 
   // Request mic
