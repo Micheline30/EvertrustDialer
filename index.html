@@ -4299,7 +4299,7 @@ async function twDialLead() {
   if (!timerRunning) toggleTimer();
 
   try {
-    twCall = await twDevice.connect({ params: { To: to, CallerId: callerId } });
+    twCall = await twDevice.connect({ params: { To: to, identity: identity } });
 
     // Call is now connecting — wire up events
     twCall.on('accept', () => {
